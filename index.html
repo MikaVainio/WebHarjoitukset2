@@ -52,6 +52,41 @@ body {
     }
 }
 
+/* Ylävalikon CSS-asetukset */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+li {
+    float: left;
+    font-family: Roboto;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+    font-style: oblique;
+
+}
+
 /* Sivuvalikko listana */
 /* ul {
     list-style-type: none;
@@ -93,17 +128,21 @@ body {
     < <div class="header">
       <h1>Maailmalla tapahtuu</h1>
     </div>
+    <!-- <div class="ylavalikko"> -->
+      <!--  Valikon sisältö -->
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    <!-- </div> -->
 
     <!-- Palstojen  muodostus (rivi, jossa 3 saraketta) -->
     <div class="row">
       <div class="column">
-        <!--  Valikon sisältö -->
-        <ul>
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
+      <h1>Viikon kuummimmat ostokset</h1>
+
       </div>
 
     <!-- Palsta 1 artikkeleille  -->
@@ -125,6 +164,9 @@ body {
         Venäjän ulkomisteri Sergei Lavrov pitää yhdysvaltain aikeita kansainvälisen oikeuden <br>
         vastaisena. Demokraatit vastustavat niinikään presidentin aikeita.
         </p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <!-- Artikkelin piilotus -painike -->
         <button class="btn" id="piilota1" style="display:none" onclick="document.getElementById('trump').style.display = 'none'
           document.getElementById('piilota1').style.display = 'none'
