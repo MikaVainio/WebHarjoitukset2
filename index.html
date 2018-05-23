@@ -2,11 +2,150 @@
 <html lang="fi" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Päivän uutiset</title>
-  </head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ylätunnisteen (header) tyyli */
+.header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+    font-size: 5vw;
+}
+
+/* Flex-kontainerit */
+.row {
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* 3 samanlevyistä saraketta */
+.column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+}
+
+/* Alatunniste*/
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsiivinen asettelu, sarakkeet päällekkäin, kun leveys alle 600 pikseliä */
+@media (max-width: 600px) {
+    .row {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+}
+
+/* Sivuvalikko listana */
+/* ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+} */
+
+/* Valikon rivien määritykset */
+/* li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    font-family: Roboto;
+    text-decoration: none;
+} */
+
+/* Valitun rivin asetukset */
+/* li a.active {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold
+} */
+
+/* Hiiri valinnan päällä */
+/* li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+} */
+  </style>
+</head>
+
+  <!--  Sivun sisältö -->
   <body>
-    <h1>Maailmalla tapahtuu</h1>
-    <h2>USA</h2>
+    < <div class="header">
+      <h1>Maailmalla tapahtuu</h1>
+    </div>
+
+    <!-- Palstojen  muodostus (rivi, jossa 3 saraketta) -->
+    <div class="row">
+      <div class="column">
+        <!--  Valikon sisältö -->
+        <ul>
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+
+    <!-- Palsta 1 artikkeleille  -->
+      <div class="column">
+        <h2>USA</h2>
+        <hr>
+        <h3>Trump uhkaa Irania saarrolla</h3>
+        <p>Presidentti Trump on ilmoittanut, että USA irtautuu Iranin ydinsulkusopimuksesta <br>
+        ja uhkaa Irania talouspakotteilla</p>
+
+        <!-- Lue lisää -painike -->
+        <button class="btn" id="nayta1"onclick="document.getElementById('trump').style.display = 'block'
+        document.getElementById('nayta1').style.display = 'none'
+        document.getElementById('piilota1').style.display = 'block'">
+          <i class="material-icons">keyboard_arrow_right </i>
+        </button>
+
+        <p id="trump" style="display:none"> Venäjä ja Turkki ovat ilmoittaneet vastustavansa USA:n aikaieta. <br>
+        Venäjän ulkomisteri Sergei Lavrov pitää yhdysvaltain aikeita kansainvälisen oikeuden <br>
+        vastaisena. Demokraatit vastustavat niinikään presidentin aikeita.
+        </p>
+        <!-- Artikkelin piilotus -painike -->
+        <button class="btn" id="piilota1" style="display:none" onclick="document.getElementById('trump').style.display = 'none'
+          document.getElementById('piilota1').style.display = 'none'
+          document.getElementById('nayta1').style.display = 'block'">
+          <i class="material-icons">keyboard_arrow_up </i>
+        </button>
+      </div>
+
+      <!-- Toinen palsta -->
+      <div class="column">
+        <h2>Eurooppa</h2>
+        <hr>
+        <h3>Italian velka sietämätön</h3>
+        <p>Italian valtion velka ylittää jo 100 miljardia </p>
+      </div>
+      <!-- <div class="column">
+        <h2>Muu maailma</h2>
+      </div> -->
+
+    </div>
+    <!-- <h2>USA</h2>
     <hr>
     <h3>Trump uhkaa Irania saarrolla</h3>
     <p>Presidentti Trunp on ilmoittanut, että USA irtautuu Iranin ydinsulkusopimuksesta <br>
@@ -28,6 +167,6 @@
     <h2>Eurooppa</h2>
     <hr>
     <h3>Italian velka sietämätön</h3>
-    <p>Italian valtion velka ylittää jo 100 miljardia </p>
+    <p>Italian valtion velka ylittää jo 100 miljardia </p> -->
   </body>
 </html>
