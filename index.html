@@ -1,94 +1,103 @@
 <!DOCTYPE html>
 <html lang="fi" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Päivän uutiset</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <style>
-* {
-    box-sizing: border-box;
-}
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Ylätunnisteen (header) tyyli */
-.header {
-    background-color: #f1f1f1;
-    padding: 30px;
-    text-align: center;
-    font-size: 5vw;
-}
-
-/* Flex-kontainerit */
-.row {
-    display: -webkit-flex;
-    display: flex;
-}
-
-/* 3 samanlevyistä saraketta */
-.column {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    padding: 10px;
-}
-
-/* Alatunniste*/
-.footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Responsiivinen asettelu, sarakkeet päällekkäin, kun leveys alle 600 pikseliä */
-@media (max-width: 600px) {
-    .row {
-      -webkit-flex-direction: column;
-      flex-direction: column;
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Päivän uutiset</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
     }
-}
 
-/* Ylävalikon CSS-asetukset */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-li {
-    float: left;
-    font-family: Roboto;
-}
+    /* Ylätunnisteen (header) tyyli */
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+    .header {
+      background-color: #f1f1f1;
+      padding: 30px;
+      text-align: center;
+      font-size: 5vw;
+    }
 
-li a:hover {
-    background-color: #111;
-}
+    /* Flex-kontainerit */
 
-.active {
-    background-color: #4CAF50;
-    font-style: oblique;
+    .row {
+      display: -webkit-flex;
+      display: flex;
+    }
 
-}
+    /* 3 samanlevyistä saraketta */
 
-/* Sivuvalikko listana */
-/* ul {
+    .column {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 10px;
+    }
+
+    /* Alatunniste*/
+
+    .footer {
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Responsiivinen asettelu, sarakkeet päällekkäin, kun leveys alle 600 pikseliä */
+
+    @media (max-width: 600px) {
+      .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+
+    /* Ylävalikon CSS-asetukset */
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: -webkit-sticky;
+      /* Safari */
+      position: sticky;
+      top: 0;
+    }
+
+    li {
+      float: left;
+      font-family: Roboto;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: #4CAF50;
+      font-style: oblique;
+
+    }
+
+    /* Sivuvalikko listana */
+
+    /* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -99,8 +108,9 @@ li a:hover {
     overflow: auto;
 } */
 
-/* Valikon rivien määritykset */
-/* li a {
+    /* Valikon rivien määritykset */
+
+    /* li a {
     display: block;
     color: #000;
     padding: 8px 16px;
@@ -108,65 +118,109 @@ li a:hover {
     text-decoration: none;
 } */
 
-/* Valitun rivin asetukset */
-/* li a.active {
+    /* Valitun rivin asetukset */
+
+    /* li a.active {
     background-color: #4CAF50;
     color: white;
     font-weight: bold
 } */
 
-/* Hiiri valinnan päällä */
-/* li a:hover:not(.active) {
+    /* Hiiri valinnan päällä */
+
+    /* li a:hover:not(.active) {
     background-color: #555;
     color: white;
 } */
+
+    /* Kuvagallerian tyylimääritykset */
+
+    div.gallery {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 180px;
+    }
+
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
   </style>
 </head>
 
-  <!--  Sivun sisältö -->
-  <body>
-    < <div class="header">
-      <h1>Maailmalla tapahtuu</h1>
+<!--  Sivun sisältö -->
+
+<body>
+  < <div class="header">
+    <h1>Maailmalla tapahtuu</h1>
     </div>
     <!-- <div class="ylavalikko"> -->
-      <!--  Valikon sisältö -->
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
+    <!--  Valikon sisältö -->
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
     <!-- </div> -->
 
     <!-- Palstojen  muodostus (rivi, jossa 3 saraketta) -->
     <div class="row">
       <div class="column">
-      <h1>Viikon kuummimmat ostokset</h1>
+        <h1>Viikon kuummimmat ostokset</h1>
+        <div class="gallery">
+          <a target="_blank" href="SamsungS9.png">
+          <img src="SamsungS9.png" alt="S9" width="300" height="200">
+          </a>
+          <div class="desc">Huippu puhelin uskomattomaan hintaan vain 99</div>
+        </div>
 
+        <div class="gallery">
+          <a target="_blank" href="Sony.jpg">
+          <img src="Sony.jpg" alt="XPeria" width="300" height="200">
+          </a>
+          <div class="desc">Vedenpitävä uutuus kovaan käyttöön</div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="Huawei.jpg">
+          <img src="Huawei.jpg" alt="Huawei" width="300" height="200">
+          </a>
+          <div class="desc">Äärimmäinen kamera haastaviin olosuhteisiin</div>
+        </div>
       </div>
 
-    <!-- Palsta 1 artikkeleille  -->
+      <!-- Palsta 2 artikkeleille  -->
       <div class="column">
         <h2>USA</h2>
         <hr>
         <h3>Trump uhkaa Irania saarrolla</h3>
-        <p>Presidentti Trump on ilmoittanut, että USA irtautuu Iranin ydinsulkusopimuksesta <br>
-        ja uhkaa Irania talouspakotteilla</p>
+        <p>Presidentti Trump on ilmoittanut, että USA irtautuu Iranin ydinsulkusopimuksesta <br> ja uhkaa Irania talouspakotteilla</p>
 
         <!-- Lue lisää -painike -->
-        <button class="btn" id="nayta1"onclick="document.getElementById('trump').style.display = 'block'
+        <button class="btn" id="nayta1" onclick="document.getElementById('trump').style.display = 'block'
         document.getElementById('nayta1').style.display = 'none'
         document.getElementById('piilota1').style.display = 'block'">
           <i class="material-icons">keyboard_arrow_right </i>
         </button>
 
-        <p id="trump" style="display:none"> Venäjä ja Turkki ovat ilmoittaneet vastustavansa USA:n aikaieta. <br>
-        Venäjän ulkomisteri Sergei Lavrov pitää yhdysvaltain aikeita kansainvälisen oikeuden <br>
-        vastaisena. Demokraatit vastustavat niinikään presidentin aikeita.
+        <p id="trump" style="display:none"> Venäjä ja Turkki ovat ilmoittaneet vastustavansa USA:n aikaieta. <br> Venäjän ulkomisteri Sergei Lavrov pitää yhdysvaltain aikeita kansainvälisen oikeuden <br> vastaisena. Demokraatit vastustavat niinikään presidentin aikeita.
         </p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <!-- Artikkelin piilotus -painike -->
         <button class="btn" id="piilota1" style="display:none" onclick="document.getElementById('trump').style.display = 'none'
           document.getElementById('piilota1').style.display = 'none'
@@ -175,7 +229,7 @@ li a:hover {
         </button>
       </div>
 
-      <!-- Toinen palsta -->
+      <!-- Kolmas palsta -->
       <div class="column">
         <h2>Eurooppa</h2>
         <hr>
@@ -210,5 +264,6 @@ li a:hover {
     <hr>
     <h3>Italian velka sietämätön</h3>
     <p>Italian valtion velka ylittää jo 100 miljardia </p> -->
-  </body>
+</body>
+
 </html>
