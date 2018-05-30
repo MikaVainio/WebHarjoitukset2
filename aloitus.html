@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Päivän uutiset</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Ylätunnisteen (header) tyyli */
+
+    .header {
+      background-color: #f1f1f1;
+      padding: 30px;
+      text-align: center;
+      font-size: 5vw;
+    }
+
+    /* Sarakemääritykset flex-kontaineri 3/4 ja 1/4 */
+    .flex-container {
+    display: flex;
+    align-items: stretch;
+
+    }
+    /* Flex-kontainerit */
+
+    /* .row {
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    /*   2 saraketta */
+
+    /* .flex-container {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 10px;
+    } */
+
+      /* Responsiivinen asettelu, sarakkeet päällekkäin, kun leveys alle 600 pikseliä */
+
+    @media (max-width: 600px) {
+      .row {
+        -webkit-flex-direction: flex-container;
+        flex-direction: flex-container;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a,
+    .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    li.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: inherit;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Kuvagallerian tyylimääritykset */
+
+    div.gallery {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 180px;
+    }
+
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<!--  Sivun sisältö -->
+
+<body>
+  < <div class="header">
+    <h1>Maailmalla tapahtuu</h1>
+    </div>
+
+    <ul>
+  <li><a href="#uutiset">Uutiset</a></li>
+  <li><a href="#yhteystiedot">Yhteytidot</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Language</a>
+    <div class="dropdown-content">
+      <a href="#">Suomenksi</a>
+      <a href="#">På svenska</a>
+      <a href="#">In English</a>
+    </div>
+  </li>
+</ul>
+
+      <!-- Kaksi palstaa sivulle-->
+      <div class="flex-container">
+
+        <!-- ensimmäinen palsta 3/4 sivun leveydestä -->
+        <div style="flex-grow: 3" > Vasen
+          <h2>USA</h2>
+          <hr>
+          <h3>Trump uhkaa Irania saarrolla</h3>
+          <p>Presidentti Trump on ilmoittanut, että USA irtautuu Iranin ydinsulkusopimuksesta <br> ja uhkaa Irania talouspakotteilla</p>
+
+          <!-- Lue lisää -painike -->
+          <button class="btn" id="nayta1" onclick="document.getElementById('trump').style.display = 'block'
+          document.getElementById('nayta1').style.display = 'none'
+          document.getElementById('piilota1').style.display = 'block'">
+            <i class="material-icons">keyboard_arrow_right </i>
+          </button>
+
+          <p id="trump" style="display:none"> Venäjä ja Turkki ovat ilmoittaneet vastustavansa USA:n aikaieta. <br> Venäjän ulkomisteri Sergei Lavrov pitää yhdysvaltain aikeita kansainvälisen oikeuden <br> vastaisena. Demokraatit vastustavat niinikään presidentin aikeita.
+          </p>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <!--Artikkelin piilotus -painike --> -->
+          <button class="btn" id="piilota1" style="display:none" onclick="document.getElementById('trump').style.display = 'none'
+            document.getElementById('piilota1').style.display = 'none'
+            document.getElementById('nayta1').style.display = 'block'">
+            <i class="material-icons">keyboard_arrow_up </i>
+          </button>
+        </div>
+
+        <!-- toinen palsta 1/4 sivun leveydestä -->
+        <div style="flex-grow: 1"> Oikea
+
+        <!-- </div>
+        <h2>USA</h2>
+        <hr>
+        <h3>Trump uhkaa Irania saarrolla</h3>
+        <p>Presidentti Trump on ilmoittanut, että USA irtautuu Iranin ydinsulkusopimuksesta <br> ja uhkaa Irania talouspakotteilla</p>
+
+        <!-- Lue lisää -painike -->
+        <!-- <button class="btn" id="nayta1" onclick="document.getElementById('trump').style.display = 'block'
+        document.getElementById('nayta1').style.display = 'none'
+        document.getElementById('piilota1').style.display = 'block'">
+          <i class="material-icons">keyboard_arrow_right </i>
+        </button>
+
+        <p id="trump" style="display:none"> Venäjä ja Turkki ovat ilmoittaneet vastustavansa USA:n aikaieta. <br> Venäjän ulkomisteri Sergei Lavrov pitää yhdysvaltain aikeita kansainvälisen oikeuden <br> vastaisena. Demokraatit vastustavat niinikään presidentin aikeita.
+        </p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <!-- Artikkelin piilotus -painike --> -->
+        <!-- <button class="btn" id="piilota1" style="display:none" onclick="document.getElementById('trump').style.display = 'none'
+          document.getElementById('piilota1').style.display = 'none'
+          document.getElementById('nayta1').style.display = 'block'">
+          <i class="material-icons">keyboard_arrow_up </i>
+        </button>
+      </div>
+      <div class="flex-container">
+        <h1>Viikon kuummimmat ostokset</h1>
+        <div class="gallery">
+          <a target="_blank" href="SamsungS9.png">
+          <img src="SamsungS9.png" alt="S9" width="300" height="200">
+          </a>
+          <div class="desc">Huippu puhelin uskomattomaan hintaan vain 99</div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="Sony.jpg">
+          <img src="Sony.jpg" alt="XPeria" width="300" height="200">
+          </a>
+          <div class="desc">Vedenpitävä uutuus kovaan käyttöön</div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="Huawei.jpg">
+          <img src="Huawei.jpg" alt="Huawei" width="300" height="200">
+          </a>
+          <div class="desc">Äärimmäinen kamera haastaviin olosuhteisiin</div>
+        </div>
+      </div> -->
+
+ -->
+
+</body>
+
+</html>
